@@ -13,6 +13,6 @@ data class Credit(
     @Column(nullable = false) val dayFirstInstallment: LocalDate,
     @Column(nullable = false) val numberOfInstallments: Int = 0,
     @Enumerated val status: Status = Status.IN_PROGRESS,
-    @ManyToOne @JoinColumn(name = "customer_id_fk") val customer: Customer? = null,
+    @ManyToOne @JoinColumn(name = "customer_id_fk") var customer: Customer? = null,
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long? = null
 )
